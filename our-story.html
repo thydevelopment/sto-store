@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Our Story — STO-Store</title>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="navbar" class="fixed z-100 w-full"></div>
+
+    <!-- ============ HERO ============ -->
+    <section class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16 md:py-24 text-center">
+            <p class="uppercase tracking-widest text-xs sm:text-sm text-indigo-600 font-medium mb-3">
+                Our Story
+            </p>
+            <h1
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-5 max-w-3xl mx-auto">
+                We started with a simple idea:
+                <span class="text-indigo-600">make great things accessible.</span>
+            </h1>
+            <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                What began as a small side project in 2020 has grown into a store
+                trusted by thousands — built on quality, honesty, and a little bit of stubbornness.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ BIG IMAGE SPLIT ============ -->
+    <section class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1000&q=80" alt="Our workshop"
+                    class="w-full h-64 sm:h-80 md:h-96 object-cover">
+            </div>
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    Made by people who actually care
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
+                    We're a small team of designers, makers, and problem-solvers.
+                    Every product on this site has been personally tested, debated, and
+                    (sometimes) argued about before it makes it to the shelves.
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
+                    No dropshipping. No filler inventory. Just things we'd genuinely
+                    buy ourselves — and quietly judge you for if you didn't.
+                </p>
+                <a href="collections.html" class="inline-block text-indigo-600 font-semibold hover:underline">
+                    See our collections →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NUMBERS ============ -->
+    <section class="bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-400 mb-2">2020</p>
+                <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-wide">Founded</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-400 mb-2">12K+</p>
+                <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-wide">Happy customers</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-400 mb-2">250+</p>
+                <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-wide">Products curated</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-400 mb-2">4.9★</p>
+                <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-wide">Average rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TIMELINE (REBUILT) ============ -->
+    <section class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+        <div class="text-center mb-10 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">How we got here</h2>
+            <p class="text-gray-600 text-sm sm:text-base">A few milestones along the way.</p>
+        </div>
+
+        <!--
+          Structure:
+          - Outer div is `relative` and holds the vertical line via an absolutely positioned element.
+          - On mobile the line is at left-4 (16px). On desktop it's at 50%.
+          - Items are `md:w-1/2`, some pushed right with `md:ml-auto`.
+          - Dots are absolute, positioned to sit exactly on the line.
+        -->
+        <div class="relative max-w-3xl mx-auto">
+
+            <!-- Vertical line -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-indigo-200 md:-translate-x-1/2"></div>
+
+            <div class="space-y-10">
+
+                <!-- Item 1 (left on desktop) -->
+                <div class="relative pl-12 md:pl-0 md:w-1/2 md:pr-10">
+                    <div
+                        class="absolute left-4 md:left-auto md:right-0 top-1 -translate-x-1/2 md:translate-x-1/2 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100">
+                    </div>
+                    <p class="text-sm font-semibold text-indigo-600 mb-1">March 2020</p>
+                    <h3 class="font-bold text-gray-900 mb-1">The first listing</h3>
+                    <p class="text-gray-600 text-sm">
+                        A single hoodie, photographed on a kitchen table.
+                        It sold out in 3 days — mostly to friends.
+                    </p>
+                </div>
+
+                <!-- Item 2 (right on desktop) -->
+                <div class="relative pl-12 md:pl-10 md:w-1/2 md:ml-auto">
+                    <div
+                        class="absolute left-4 md:left-0 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100">
+                    </div>
+                    <p class="text-sm font-semibold text-indigo-600 mb-1">October 2021</p>
+                    <h3 class="font-bold text-gray-900 mb-1">1,000 orders</h3>
+                    <p class="text-gray-600 text-sm">
+                        Hit our first real milestone. Moved out of the garage
+                        and into a proper warehouse.
+                    </p>
+                </div>
+
+                <!-- Item 3 (left on desktop) -->
+                <div class="relative pl-12 md:pl-0 md:w-1/2 md:pr-10">
+                    <div
+                        class="absolute left-4 md:left-auto md:right-0 top-1 -translate-x-1/2 md:translate-x-1/2 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100">
+                    </div>
+                    <p class="text-sm font-semibold text-indigo-600 mb-1">June 2023</p>
+                    <h3 class="font-bold text-gray-900 mb-1">Went carbon-neutral</h3>
+                    <p class="text-gray-600 text-sm">
+                        Switched to eco-friendly packaging, offset all shipping,
+                        and started partnering with sustainable suppliers.
+                    </p>
+                </div>
+
+                <!-- Item 4 (right on desktop) -->
+                <div class="relative pl-12 md:pl-10 md:w-1/2 md:ml-auto">
+                    <div
+                        class="absolute left-4 md:left-0 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100">
+                    </div>
+                    <p class="text-sm font-semibold text-indigo-600 mb-1">Today</p>
+                    <h3 class="font-bold text-gray-900 mb-1">Still going</h3>
+                    <p class="text-gray-600 text-sm">
+                        250+ products, 12,000+ happy customers, and the same
+                        obsession with quality we started with.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VALUES ============ -->
+    <section class="bg-white border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">What we believe</h2>
+                <p class="text-gray-600 text-sm sm:text-base">Three principles that guide everything we do.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+                <div
+                    class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-indigo-200 hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-4">
+                        ✨
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Quality over quantity</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We'd rather sell 10 great things than 1,000 forgettable ones.
+                        Every product is tested before it's listed.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-indigo-200 hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-4">
+                        🌱
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Sustainable by default</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Eco packaging, carbon-offset shipping, and supplier
+                        partnerships that treat people fairly.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-indigo-200 hover:shadow-md transition sm:col-span-2 md:col-span-1">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-4">
+                        🤝
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Honest, always</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Real reviews, real prices, real people. If we mess up,
+                        we'll say so and make it right.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+        <div class="text-center mb-10 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">The team</h2>
+            <p class="text-gray-600 text-sm sm:text-base">Small crew, big opinions.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div class="text-center group">
+                <div
+                    class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-300 transition">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80" alt="Ava Chen"
+                        class="w-full h-full object-cover">
+                </div>
+                <p class="font-semibold text-gray-900 text-sm sm:text-base">Ava Chen</p>
+                <p class="text-xs sm:text-sm text-gray-500">Founder & CEO</p>
+            </div>
+
+            <div class="text-center group">
+                <div
+                    class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-300 transition">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Marco Silva"
+                        class="w-full h-full object-cover">
+                </div>
+                <p class="font-semibold text-gray-900 text-sm sm:text-base">Marco Silva</p>
+                <p class="text-xs sm:text-sm text-gray-500">Head of Product</p>
+            </div>
+
+            <div class="text-center group">
+                <div
+                    class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-300 transition">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" alt="Priya Patel"
+                        class="w-full h-full object-cover">
+                </div>
+                <p class="font-semibold text-gray-900 text-sm sm:text-base">Priya Patel</p>
+                <p class="text-xs sm:text-sm text-gray-500">Design Lead</p>
+            </div>
+
+            <div class="text-center group">
+                <div
+                    class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden ring-4 ring-indigo-100 group-hover:ring-indigo-300 transition">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80"
+                        alt="Jamal Wright" class="w-full h-full object-cover">
+                </div>
+                <p class="font-semibold text-gray-900 text-sm sm:text-base">Jamal Wright</p>
+                <p class="text-xs sm:text-sm text-gray-500">Customer Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to browse?</h2>
+            <p class="text-indigo-100 mb-6 max-w-lg mx-auto text-sm sm:text-base">
+                Now that you know our story, come see what we've been working on.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="shop.html"
+                    class="bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-50 transition shadow-lg">
+                    Shop now
+                </a>
+                <a href="collections.html"
+                    class="border border-white/40 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition">
+                    Browse collections
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-slate-950 text-slate-400 text-sm" id="footer">
+    </footer>
+
+    <script src="./scripts/global/navbar.js"></script>
+    <script src="../scripts/menubar.js"></script>
+    <script src="./scripts/global/footer.js"></script>
+</body>
+
+</html>

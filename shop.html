@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Shop — STO-Store</title>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar injected by globalscript.js -->
+    <div id="navbar" class="fixed z-100 w-full"></div>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <nav class="text-sm text-gray-500 mb-2">
+                <a href="index.html" class="hover:text-indigo-600">Home</a>
+                <span class="mx-1">/</span>
+                <span class="text-gray-800 font-medium">Shop</span>
+            </nav>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                Shop All Products
+            </h1>
+            <p class="text-gray-500">
+                Browse our full collection — filter by category, price, or rating.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ MAIN LAYOUT ============ -->
+    <section class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8">
+
+            <!-- ============ SIDEBAR FILTERS ============ -->
+            <aside class="space-y-6">
+
+                <!-- Category -->
+                <div class="bg-white rounded-xl p-5 border border-gray-200">
+                    <h2 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+                        Category
+                    </h2>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="checkbox" checked class="accent-indigo-600"> All Products
+                                <span class="ml-auto text-gray-400 text-xs">120</span>
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="checkbox" class="accent-indigo-600"> Clothing
+                                <span class="ml-auto text-gray-400 text-xs">42</span>
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="checkbox" class="accent-indigo-600"> Shoes
+                                <span class="ml-auto text-gray-400 text-xs">28</span>
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="checkbox" class="accent-indigo-600"> Accessories
+                                <span class="ml-auto text-gray-400 text-xs">35</span>
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="checkbox" class="accent-indigo-600"> Bags
+                                <span class="ml-auto text-gray-400 text-xs">15</span>
+                            </label></li>
+                    </ul>
+                </div>
+
+                <!-- Price range -->
+                <div class="bg-white rounded-xl p-5 border border-gray-200">
+                    <h2 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+                        Price
+                    </h2>
+                    <input type="range" min="0" max="500" value="250" class="w-full accent-indigo-600 mb-2">
+                    <div class="flex justify-between text-xs text-gray-500">
+                        <span>$0</span>
+                        <span>$500+</span>
+                    </div>
+                </div>
+
+                <!-- Rating -->
+                <div class="bg-white rounded-xl p-5 border border-gray-200">
+                    <h2 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+                        Rating
+                    </h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="radio" name="rating" class="accent-indigo-600">
+                                <span class="text-yellow-500">★★★★★</span> & up
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="radio" name="rating" class="accent-indigo-600">
+                                <span class="text-yellow-500">★★★★☆</span> & up
+                            </label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600">
+                                <input type="radio" name="rating" class="accent-indigo-600">
+                                <span class="text-yellow-500">★★★☆☆</span> & up
+                            </label></li>
+                    </ul>
+                </div>
+
+                <!-- Size -->
+                <div class="bg-white rounded-xl p-5 border border-gray-200">
+                    <h2 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+                        Size
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="w-9 h-9 rounded-md border border-gray-200 text-sm hover:border-indigo-600 hover:text-indigo-600">S</button>
+                        <button
+                            class="w-9 h-9 rounded-md border border-gray-200 text-sm hover:border-indigo-600 hover:text-indigo-600">M</button>
+                        <button
+                            class="w-9 h-9 rounded-md border border-gray-200 text-sm hover:border-indigo-600 hover:text-indigo-600">L</button>
+                        <button
+                            class="w-9 h-9 rounded-md border border-gray-200 text-sm hover:border-indigo-600 hover:text-indigo-600">XL</button>
+                    </div>
+                </div>
+
+                <button
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg transition">
+                    Apply Filters
+                </button>
+            </aside>
+
+            <!-- ============ PRODUCT AREA ============ -->
+            <div>
+
+                <!-- Top bar: result count + sort -->
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                    <p class="text-sm text-gray-500">
+                        Showing <span class="font-semibold text-gray-900">1–8</span> of <span
+                            class="font-semibold text-gray-900">120</span> products
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <label for="sort" class="text-sm text-gray-500">Sort by</label>
+                        <select id="sort"
+                            class="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option>Featured</option>
+                            <option>Newest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Top Rated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Active filter chips -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span
+                        class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">
+                        Clothing <button class="hover:text-indigo-900">✕</button>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">
+                        $0 – $250 <button class="hover:text-indigo-900">✕</button>
+                    </span>
+                    <button class="text-xs text-gray-500 underline hover:text-gray-800">
+                        Clear all
+                    </button>
+                </div>
+
+                <!-- ============ PRODUCT GRID ============ -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+
+                    <!-- Card 1 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+                                alt="Red sneaker"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Shoes</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Red Sneaker Pro
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★★ <span class="text-gray-400 ml-1">(42)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$89.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80"
+                                alt="T-shirt"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Clothing</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Classic White Tee
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★☆ <span class="text-gray-400 ml-1">(18)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$24.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80"
+                                alt="Backpack"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Bags</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Urban Backpack
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★★ <span class="text-gray-400 ml-1">(67)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$64.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
+                                alt="Watch"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Accessories</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Minimal Watch
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★☆ <span class="text-gray-400 ml-1">(29)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$120.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80"
+                                alt="Sunglasses"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Accessories</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Retro Sunglasses
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★★ <span class="text-gray-400 ml-1">(51)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$39.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&q=80" alt="Hoodie"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Clothing</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Cozy Oversized Hoodie
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★☆ <span class="text-gray-400 ml-1">(12)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$54.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 7 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&q=80"
+                                alt="Sneakers"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Shoes</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                White Court Sneakers
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★★ <span class="text-gray-400 ml-1">(88)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$99.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 8 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80"
+                                alt="Camera"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Accessories</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Vintage Camera
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★☆ <span class="text-gray-400 ml-1">(7)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$249.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 9 -->
+                    <article
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Bag"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                            <button
+                                class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-2 text-gray-600 hover:text-pink-500 transition"
+                                aria-label="Wishlist">
+                                ♥
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Bags</p>
+                            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition">
+                                Leather Tote Bag
+                            </h3>
+                            <div class="flex items-center gap-1 text-yellow-500 text-sm mb-3">
+                                ★★★★★ <span class="text-gray-400 ml-1">(33)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-lg font-bold text-gray-900">$179.00</p>
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- ============ PAGINATION ============ -->
+                <div class="flex justify-center items-center gap-2 mt-10">
+                    <button
+                        class="px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-100 disabled:opacity-50"
+                        disabled>
+                        Prev
+                    </button>
+                    <button class="w-10 h-10 rounded-lg bg-indigo-600 text-white text-sm font-medium">1</button>
+                    <button
+                        class="w-10 h-10 rounded-lg border border-gray-200 text-sm text-gray-700 hover:bg-gray-100">2</button>
+                    <button
+                        class="w-10 h-10 rounded-lg border border-gray-200 text-sm text-gray-700 hover:bg-gray-100">3</button>
+                    <span class="px-2 text-gray-400">…</span>
+                    <button
+                        class="w-10 h-10 rounded-lg border border-gray-200 text-sm text-gray-700 hover:bg-gray-100">15</button>
+                    <button class="px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 hover:bg-gray-100">
+                        Next
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-slate-950 text-slate-400 text-sm mt-16" id="footer"> 
+    </footer>
+
+    <script src="./scripts/global/navbar.js"></script>
+    <script src="../scripts/menubar.js"></script>
+    <script src="./scripts/global/footer.js"></script>
+</body>
+
+</html>

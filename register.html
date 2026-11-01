@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Create Account — STO-Store</title>
+</head>
+
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <div id="navbar"></div>
+
+    <main class="flex-1 grid md:grid-cols-2 min-h-[calc(100vh-64px)]">
+
+        <!-- LEFT: form -->
+        <div class="flex items-center justify-center px-4 py-10 md:py-16">
+            <div class="w-full max-w-sm">
+                <p class="uppercase tracking-widest text-xs text-indigo-600 font-semibold mb-2">Get started</p>
+                <h1 class="text-3xl font-bold text-gray-900 mb-1">Create account</h1>
+                <p class="text-gray-500 text-sm mb-6">Join us — it takes 30 seconds.</p>
+
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Account created (demo)');">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label for="first" class="block text-sm font-medium text-gray-700 mb-1">First name</label>
+                            <input type="text" id="first" required placeholder="Jane"
+                                class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="last" class="block text-sm font-medium text-gray-700 mb-1">Last name</label>
+                            <input type="text" id="last" required placeholder="Doe"
+                                class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" required placeholder="you@example.com"
+                            class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" id="password" required minlength="8" placeholder="At least 8 characters"
+                            class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label for="confirm" class="block text-sm font-medium text-gray-700 mb-1">Confirm
+                            password</label>
+                        <input type="password" id="confirm" required minlength="8" placeholder="Repeat password"
+                            class="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    </div>
+
+                    <label class="flex items-start gap-2 text-sm text-gray-600 cursor-pointer">
+                        <input type="checkbox" required class="accent-indigo-600 mt-0.5">
+                        <span>
+                            I agree to the
+                            <a href="#" class="text-indigo-600 hover:underline">Terms</a>
+                            and
+                            <a href="#" class="text-indigo-600 hover:underline">Privacy Policy</a>
+                        </span>
+                    </label>
+
+                    <button type="submit"
+                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg transition">
+                        Create account
+                    </button>
+                </form>
+
+                <p class="text-center text-sm text-gray-600 mt-6">
+                    Already have an account?
+                    <a href="login.html" class="text-indigo-600 font-medium hover:underline">Sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- RIGHT: image -->
+        <div class="hidden md:block relative">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80" alt="Shopping"
+                class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-purple-900/50 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10 text-white">
+                <p class="text-2xl font-bold mb-2">Join thousands.</p>
+                <p class="text-sm text-indigo-100 max-w-sm">
+                    Get first access to new drops, exclusive offers, and honest reviews.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="./scripts/global/navbar.js"></script>
+    <script src="../scripts/menubar.js"></script>
+    <script src="./scripts/global/footer.js"></script>
+</body>
+
+</html>
